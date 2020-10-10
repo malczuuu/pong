@@ -782,8 +782,9 @@ MonoBehaviour:
   bottomWall: {fileID: 1538066521}
   leftWall: {fileID: 2080970324}
   rightWall: {fileID: 1536942434}
-  player: {fileID: 0}
-  opponent: {fileID: 0}
+  playersOffset: 50
+  player: {fileID: 485456131}
+  opponent: {fileID: 72185472}
 --- !u!4 &2012914388
 Transform:
   m_ObjectHideFlags: 0
