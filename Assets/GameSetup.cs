@@ -18,14 +18,12 @@ public class GameSetup : MonoBehaviour
 
     public KeyCode closeKey;
 
-    // Start is called before the first frame update
     public void Start()
     {
         SetupWalls();
         SetupPlayers();
     }
-
-    // Update is called once per frame
+    
     public void Update()
     {
         if (Input.GetKey(closeKey))
