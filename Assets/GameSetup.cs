@@ -38,26 +38,34 @@ public class GameSetup : MonoBehaviour
 
     private void SetupTopWall()
     {
-        topWall.size = new Vector2(mainCamera.ScreenToWorldPoint(new Vector3(Screen.width * 2.0f, 0.0f, 0.0f)).x, 1.0f);
-        topWall.offset = new Vector2(0.0f, mainCamera.ScreenToWorldPoint(new Vector3(0.0f, Screen.height, 0.0f)).y + 0.5f);
+        float topWallWidth = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width * 2.0f, 0.0f, 0.0f)).x;
+        float topWallOffset = mainCamera.ScreenToWorldPoint(new Vector3(0.0f, Screen.height, 0.0f)).y + 0.5f;
+        topWall.size = new Vector2(topWallWidth, 1.0f);
+        topWall.offset = new Vector2(0.0f, topWallOffset);
     }
 
     private void SetupBottomWall()
     {
-        bottomWall.size = new Vector2(mainCamera.ScreenToWorldPoint(new Vector3(Screen.width * 2.0f, 0.0f, 0.0f)).x, 1.0f);
-        bottomWall.offset = new Vector2(0.0f, (mainCamera.ScreenToWorldPoint(new Vector3(0.0f, Screen.height, 0.0f)).y + 0.5f) * -1.0f);
+        float bottomWallWidth = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width * 2.0f, 0.0f, 0.0f)).x;
+        float bottomWAllOffset = (mainCamera.ScreenToWorldPoint(new Vector3(0.0f, Screen.height, 0.0f)).y + 0.5f) * -1.0f;
+        bottomWall.size = new Vector2(bottomWallWidth, 1.0f);
+        bottomWall.offset = new Vector2(0.0f, bottomWAllOffset);
     }
 
     private void SetupLeftWall()
     {
-        leftWall.size = new Vector2(1.0f, mainCamera.ScreenToWorldPoint(new Vector3(0.0f, Screen.height * 2.0f, 0.0f)).y);
-        leftWall.offset = new Vector2((mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, 0.0f)).x + 0.5f) * -1.0f, 0.0f);
+        float leftWallHeight = mainCamera.ScreenToWorldPoint(new Vector3(0.0f, Screen.height * 2.0f, 0.0f)).y;
+        float leftWallOffset = (mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, 0.0f)).x + 0.5f) * -1.0f;
+        leftWall.size = new Vector2(1.0f, leftWallHeight);
+        leftWall.offset = new Vector2(leftWallOffset, 0.0f);
     }
 
     private void SetupRightWall()
     {
-        rightWall.size = new Vector2(1.0f, mainCamera.ScreenToWorldPoint(new Vector3(0.0f, Screen.height * 2.0f, 0.0f)).y);
-        rightWall.offset = new Vector2(mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, 0.0f)).x + 0.5f, 0.0f);
+        float rightWallHeight = mainCamera.ScreenToWorldPoint(new Vector3(0.0f, Screen.height * 2.0f, 0.0f)).y;
+        float rightWallOffset = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, 0.0f)).x + 0.5f;
+        rightWall.size = new Vector2(1.0f, rightWallHeight);
+        rightWall.offset = new Vector2(rightWallOffset, 0.0f);
     }
 
     private void SetupPlayers()
