@@ -20,7 +20,7 @@ public class GameSetup : MonoBehaviour
     public void Start()
     {
         SetupWalls();
-        SetupPlayersFixed();
+        SetupPlayers();
     }
 
     // Update is called once per frame
@@ -69,14 +69,6 @@ public class GameSetup : MonoBehaviour
     }
 
     private void SetupPlayers()
-    {
-        float opponentX = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, 0.0f, 0.0f)).x - 0.5f;
-        float playerX = opponentX * -1.0f;
-        player.position = new Vector3(playerX, player.position.y, player.position.z);
-        opponent.position = new Vector3(opponentX, opponent.position.y, opponent.position.z);
-    }
-
-    private void SetupPlayersFixed()
     {
         float opponentX = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width - playersOffset, 0.0f, 0.0f)).x;
         float playerX = mainCamera.ScreenToWorldPoint(new Vector3(playersOffset, 0.0f, 0.0f)).x;
