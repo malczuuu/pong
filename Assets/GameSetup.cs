@@ -16,6 +16,8 @@ public class GameSetup : MonoBehaviour
     public Transform player;
     public Transform opponent;
 
+    public KeyCode closeKey;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -26,6 +28,10 @@ public class GameSetup : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if (Input.GetKey(closeKey))
+        {
+            Application.Quit();
+        }
     }
 
     private void SetupWalls()

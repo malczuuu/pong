@@ -785,6 +785,7 @@ MonoBehaviour:
   playersOffset: 50
   player: {fileID: 485456131}
   opponent: {fileID: 72185472}
+  closeKey: 27
 --- !u!4 &2012914388
 Transform:
   m_ObjectHideFlags: 0
