@@ -6,22 +6,37 @@ public class BallControl : MonoBehaviour
 {
     private static readonly string PLAYER = "Player";
 
+    public float ballSpeed = 100.0f;
+
     public void Start()
     {
-        ChooseInitialDirection();
+        StartCoroutine(GoBallAfterSecond(1.0f));
     }
 
-    private void ChooseInitialDirection()
+    private IEnumerator GoBallAfterSecond(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        GoBall();
+    }
+
+    private void GoBall()
     {
         float directionRanom = Random.Range(0.0f, 1.0f);
         if (directionRanom < 0.5f)
         {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(-60.0f, 10.0f));
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(-ballSpeed, 10.0f));
         }
         else
         {
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(60.0f, 10.0f));
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(ballSpeed, 10.0f));
         }
+    }
+
+    private void ResetBall()
+    {
+        GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
+        GetComponent<Transform>().position = new Vector2(0.0f, 0.0f);
+        StartCoroutine(GoBallAfterSecond(0.5f));
     }
 
     void OnCollisionEnter2D(Collision2D collision)

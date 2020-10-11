@@ -12,6 +12,7 @@ public class SideWalls : MonoBehaviour
         {
             string wallName = GetComponent<Transform>().name;
             GameManager.Score(wallName);
+            collider.gameObject.SendMessage("ResetBall");
         }
     }
 }
