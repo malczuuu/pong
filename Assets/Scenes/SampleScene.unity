@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveUp: 273
   moveDown: 274
-  speed: 20
+  speed: 17
 --- !u!61 &72185470
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveUp: 119
   moveDown: 115
-  speed: 20
+  speed: 17
 --- !u!50 &485456133
 Rigidbody2D:
   serializedVersion: 4
@@ -874,7 +874,7 @@ GameObject:
   - component: {fileID: 1994594420}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,5 +1,4 @@
-﻿using static System.Math;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -46,7 +45,7 @@ public class BallControl : MonoBehaviour
         {
             float ballVelocityX = GetComponent<Rigidbody2D>().velocity.x;
             float ballVelocityY = GetComponent<Rigidbody2D>().velocity.y;
-            if (Abs(ballVelocityX - 0.0f) > 1e-5 && Abs(ballVelocityX - 0.0f) > 1e-5)
+            if (ballVelocityX != 0.0f && ballVelocityX != 0.0f)
             {
                 float colliderVelocityY = collision.collider.GetComponent<Rigidbody2D>().velocity.y;
                 ballVelocityY = 0.5f * ballVelocityY + 0.33f * colliderVelocityY;
@@ -54,6 +53,22 @@ public class BallControl : MonoBehaviour
             }
             GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
             GetComponent<AudioSource>().Play();
+        }
+    }
+
+    private void Update()
+    {
+        float ballVelocityX = GetComponent<Rigidbody2D>().velocity.x;
+        if (ballVelocityX != 0.0f)
+        {
+            if (ballVelocityX > 0.0f && ballVelocityX < 14.0f)
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(16.0f, GetComponent<Rigidbody2D>().velocity.y);
+            }
+            else if (ballVelocityX < 0.0f && ballVelocityX > -14.0f)
+            {
+                GetComponent<Rigidbody2D>().velocity = new Vector2(-16.0f, GetComponent<Rigidbody2D>().velocity.y);
+            }
         }
     }
 }
