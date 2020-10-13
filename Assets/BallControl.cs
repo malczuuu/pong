@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using static System.Math;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -45,9 +46,12 @@ public class BallControl : MonoBehaviour
         {
             float ballVelocityX = GetComponent<Rigidbody2D>().velocity.x;
             float ballVelocityY = GetComponent<Rigidbody2D>().velocity.y;
-            float colliderVelocityY = collision.collider.GetComponent<Rigidbody2D>().velocity.y;
-            ballVelocityY = 0.5f * ballVelocityY + 0.33f * colliderVelocityY;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(ballVelocityX, ballVelocityY);
+            if (Abs(ballVelocityX - 0.0f) > 1e-5 && Abs(ballVelocityX - 0.0f) > 1e-5)
+            {
+                float colliderVelocityY = collision.collider.GetComponent<Rigidbody2D>().velocity.y;
+                ballVelocityY = 0.5f * ballVelocityY + 0.33f * colliderVelocityY;
+                GetComponent<Rigidbody2D>().velocity = new Vector2(ballVelocityX, ballVelocityY);
+            }
         }
     }
 }

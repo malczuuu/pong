@@ -201,7 +201,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24, y: 2.86}
+  m_Size: {x: 0.4, y: 2.86}
   m_EdgeRadius: 0
 --- !u!212 &72185471
 SpriteRenderer:
@@ -392,7 +392,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.24, y: 2.86}
+  m_Size: {x: 0.4, y: 2.86}
   m_EdgeRadius: 0
 --- !u!212 &485456130
 SpriteRenderer:
@@ -894,7 +894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed5c6c015cdffe4b88f35302893b7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSpeed: 100
+  ballSpeed: 80
 --- !u!1 &2012914386
 GameObject:
   m_ObjectHideFlags: 0
