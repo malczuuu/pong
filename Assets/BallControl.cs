@@ -52,6 +52,8 @@ public class BallControl : MonoBehaviour
                 ballVelocityY = 0.5f * ballVelocityY + 0.33f * colliderVelocityY;
                 GetComponent<Rigidbody2D>().velocity = new Vector2(ballVelocityX, ballVelocityY);
             }
+            GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+            GetComponent<AudioSource>().Play();
         }
     }
 }
