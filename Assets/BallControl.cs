@@ -21,6 +21,10 @@ public class BallControl : MonoBehaviour
 
     private void GoBall()
     {
+        if (GetComponent<Rigidbody2D>().velocity != new Vector2(0.0f, 0.0f))
+        {
+            return;
+        }
         float directionRanom = Random.Range(0.0f, 1.0f);
         if (directionRanom < 0.5f)
         {
